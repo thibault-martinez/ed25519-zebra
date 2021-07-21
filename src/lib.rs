@@ -1,3 +1,4 @@
+#![cfg_attr(not(feature = "std"), no_std)]
 #![doc(html_root_url = "https://docs.rs/ed25519-zebra/2.2.0")]
 #![cfg_attr(feature = "nightly", feature(doc_cfg))]
 #![cfg_attr(feature = "nightly", feature(external_doc))]
@@ -6,6 +7,7 @@
 
 //! Docs require the `nightly` feature until RFC 1990 lands.
 
+#[cfg(feature = "std")]
 pub mod batch;
 mod error;
 mod signature;

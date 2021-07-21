@@ -1,4 +1,4 @@
-use std::convert::{TryFrom, TryInto};
+use core::convert::{TryFrom, TryInto};
 
 use curve25519_dalek::{
     edwards::{CompressedEdwardsY, EdwardsPoint},
@@ -14,12 +14,12 @@ use crate::{Error, Signature};
 ///
 /// This is useful for representing an encoded verification key, while the
 /// [`VerificationKey`] type in this library caches other decoded state used in
-/// signature verification.  
+/// signature verification.
 ///
 /// A `VerificationKeyBytes` can be used to verify a single signature using the
 /// following idiom:
 /// ```
-/// use std::convert::TryFrom;
+/// use core::convert::TryFrom;
 /// # use rand::thread_rng;
 /// # use ed25519_zebra::*;
 /// # let msg = b"Zcash";
