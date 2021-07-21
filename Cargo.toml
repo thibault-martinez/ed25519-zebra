@@ -14,11 +14,11 @@ description = "Zcash-flavored Ed25519 for use in Zebra."
 features = ["nightly"]
 
 [dependencies]
-hex = { version = "0.4", default-features = false }
-sha2 = "0.9"
-rand_core = "0.6"
-curve25519-dalek = { version = "3", default-features = false }
-serde = { version = "1", optional = true, default-features = false, features = ["derive"] }
+hex = { version = "0.4", default-features = false, features = [ "alloc" ] }
+sha2 = { version = "0.9", default-features = false }
+rand_core = { version = "0.5", default-features = false }
+curve25519-dalek = { version = "3", default-features = false, features = [ "alloc", "u64_backend" ] }
+serde = { version = "1", optional = true, default-features = false, features = [ "derive" ] }
 zeroize = "1.1"
 
 [dev-dependencies]
